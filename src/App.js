@@ -1,24 +1,19 @@
 import './App.css';
-import Landing from './Pages/Landing';
+import HomeP from './Pages/HomeP';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
-import { useLocalContext } from './Context/Context';
-import RouteHandler from './Route/RouteHandler';
-import Register from './Pages/Register';
+import { useUserContext } from './Context/UserContext';
+import Reg from './RouteHandler/Reg';
 import Home from './Pages/Home';
 import Class from './Pages/Class';
 
 function App() {
-	const { loggedInUser, logout } = useLocalContext();
-	console.log(!!loggedInUser);
-
+	const { loggedInUser, logout } = useUserContext();
+	// logout();
 	return (
-		<Router className='App'>
+		<Router>
 			<Switch>
 				<Route path='/' exact>
-					{loggedInUser ? <RouteHandler /> : <Landing />}
-				</Route>
-				<Route path='/reg' exact>
-					<Register reg={!!loggedInUser} />
+					{loggedInUser == null ? <HomeP /> : <Reg />}
 				</Route>
 				<Route path='/home' exact>
 					<Home />
@@ -30,4 +25,5 @@ function App() {
 		</Router>
 	);
 }
+
 export default App;

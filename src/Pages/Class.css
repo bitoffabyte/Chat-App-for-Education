@@ -1,39 +1,27 @@
-.class {
-	width: 100vw;
-	height: 100vh;
-	display: flex;
-}
-.sidethingy {
+.middle {
+	/* width: 100%; */
+	height: 50%;
 	display: flex;
 	flex-direction: column;
-	height: 100vh;
-	flex: 0.67;
+	justify-content: space-evenly;
 	align-items: center;
-	justify-content: center;
 }
-.Head {
-	width: 100%;
-	height: 20%;
-	display: flex;
-	align-items: flex-end;
-	text-align: left;
-}
-.bod {
-	width: 100%;
-	height: 80%;
-}
-.Head p {
-	align-items: left;
-	display: inline-block;
-	text-transform: capitalize;
-	font-family: Roboto;
-	font-weight: bold;
-	font-size: 3vw;
-
-	color: #000000;
-	bottom: 0;
-	float: bottom;
+.div1 {
 	margin: 0;
-	margin-left: 5%;
-	margin-bottom: 2%;
+}
+.asddd {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.asddd p,
+.icons {
+	font-size: 1.2vw;
+}
+.lkl {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	cursor: pointer;
 }

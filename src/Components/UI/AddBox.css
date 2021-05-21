@@ -1,0 +1,38 @@
+.bbooxx {
+	width: 50%;
+	height: 20%;
+	margin: auto;
+	border-radius: 50px;
+	background: #f5f5f5;
+	box-shadow: 31px 31px 62px #d0d0d0, -31px -31px 62px #ffffff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 5%;
+}
+.ddd {
+	border-radius: 50px;
+	background: linear-gradient(145deg, #dddddd, #ffffff);
+	box-shadow: 31px 31px 62px #d0d0d0, -31px -31px 62px #ffffff;
+}
+.hhfh {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.llkk {
+	width: 10%;
+	/* height: 40%; */
+	border-radius: 50%;
+}
+.det {
+	margin: 0;
+}
+
+.opop {
+	margin-top: 2%;
+	margin-left: 2%;
+}
+.asddd {
+	justify-self: flex-end;
+}

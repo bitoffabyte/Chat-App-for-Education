@@ -1,0 +1,28 @@
+.chatBox {
+	flex: 0.7;
+}
+.chatdiv {
+	height: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.searchBar {
+	width: 80%;
+	background-color: #dbc5e9;
+}
+.chatArea {
+	height: 90%;
+	background-color: white;
+}
+.chat {
+	height: 90%;
+	background-color: chartreuse;
+}
+.chatText {
+	height: 10%;
+	background-color: cadetblue;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

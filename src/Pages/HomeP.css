@@ -1,0 +1,40 @@
+.fl {
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+.divider {
+	width: 50vw;
+	height: 100%;
+}
+
+.left {
+}
+.logo {
+	font-family: Merriweather;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 11vw;
+	line-height: 201px;
+	color: #000000;
+	text-align: center;
+	margin: auto;
+	margin-top: 20%;
+}
+.right {
+	/* background-color: red; */
+}
+.homeImg {
+	position: relative;
+	width: 80%;
+	top: 40%;
+	left: 10%;
+}
+.signinbtn {
+	display: block;
+	width: 20%;
+	margin: auto;
+	margin-left: 22%;
+	margin-top: 10%;
+	cursor: pointer;
+}

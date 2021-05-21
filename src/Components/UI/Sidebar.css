@@ -1,5 +1,4 @@
-.landgb {
-	height: 100vh;
-	width: 100vw;
+.sideB {
+	flex: 0.3;
 	background: linear-gradient(180deg, #f7f0f7 20.71%, #bbd9e9 100%);
 }

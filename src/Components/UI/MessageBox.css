@@ -1,0 +1,32 @@
+.mmssgg {
+	max-width: 50%;
+	min-width: 20%;
+	border-radius: 15px;
+	background-color: #f6c4da;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.th {
+	background-color: #c9ddf5;
+}
+.msgContainer {
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 2% 0;
+}
+.thh {
+	justify-content: flex-end;
+	/* margin-right: 10%; */
+}
+.msgCon {
+	width: 80%;
+	text-align: left;
+	word-break: break-word;
+	text-align: center;
+}
+.msgCon p {
+	text-align: left;
+}
