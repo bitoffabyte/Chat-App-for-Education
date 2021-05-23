@@ -1,18 +1,28 @@
 .bsd {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .yeet {
-	width: 25vw;
+  width: 25vw;
 }
 .asd {
-	width: 25vw;
+  width: 25vw;
 }
-.btn {
-	margin-top: 100%;
+.reg_btn {
+  margin-top: 100%;
+  /* cursor: pointer; */
+}
+
+@media screen and (max-width: 768px) {
+  .asd {
+    width: 50vw;
+  }
+  .yeet {
+    width: 100%;
+  }
 }
