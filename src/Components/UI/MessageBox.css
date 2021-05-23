@@ -1,35 +1,38 @@
 .mmssgg {
-  /* max-width: 50%;
+	/* max-width: 50%;
 	min-width: 20%; */
-  max-width: 500px;
-  min-width: 200px;
-  width: 50%;
-  border-radius: 15px;
-  background-color: #f6c4da;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	max-width: 500px;
+	min-width: 200px;
+	width: 50%;
+	border-radius: 15px;
+	background-color: #f6c4da;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.pointer {
+	cursor: pointer;
 }
 .th {
-  background-color: #c9ddf5;
+	background-color: #c9ddf5;
 }
 .msgContainer {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 2% 0;
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 2% 0;
 }
 .thh {
-  justify-content: flex-end;
-  /* margin-right: 10%; */
+	justify-content: flex-end;
+	/* margin-right: 10%; */
 }
 .msgCon {
-  width: 85%;
-  text-align: left;
-  word-break: break-word;
-  text-align: center;
+	width: 85%;
+	text-align: left;
+	word-break: break-word;
+	text-align: center;
 }
 .msgCon p {
-  text-align: left;
+	text-align: left;
 }

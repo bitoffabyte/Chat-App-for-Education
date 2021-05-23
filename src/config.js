@@ -16,5 +16,7 @@ provider.setCustomParameters({
 	prompt: 'select_account',
 });
 const database = firebase.database();
-export { auth, provider, database };
+var storage = firebase.app().storage();
+
+export { auth, provider, database, storage };
 export default db;

@@ -2,7 +2,7 @@ import { TextField } from '@material-ui/core';
 import React, { useState } from 'react';
 import Chat from '../UI/Chat';
 import './ChatScreen.css';
-const ChatScreen = ({ room, setRoom }) => {
+const ChatScreen = ({ room, setRoom, classes, isTeacher }) => {
 	const [search, setSearch] = useState('');
 	return (
 		<div className='chatBox'>
@@ -16,7 +16,13 @@ const ChatScreen = ({ room, setRoom }) => {
 					value={search}
 				/>
 			</div>
-			<Chat room={room} setRoom={setRoom} search={search} />
+			<Chat
+				classes={classes}
+				room={room}
+				setRoom={setRoom}
+				search={search}
+				isTeacher={isTeacher}
+			/>
 		</div>
 	);
 };
