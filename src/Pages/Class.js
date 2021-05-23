@@ -101,7 +101,7 @@ const Class = ({ match }) => {
               {isTeacher ? null : <p className="namerolll">{user.regNo}</p>}
             </div>
           </div>
-          <div className="middle">
+          <div className="middle linksMiddle">
             <div className="lkl">
               {isTeacher ? (
                 <Button
@@ -115,7 +115,7 @@ const Class = ({ match }) => {
               {rooms.map((i) => {
                 return (
                   <div
-                    className="asddd"
+                    className="asddd sideLinks"
                     key={i.id}
                     onClick={() => setSelectedRoom(i)}
                   >
