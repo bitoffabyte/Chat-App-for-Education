@@ -1,7 +1,7 @@
 import React from "react";
 import "./MessageBox.css";
 const MessageBox = ({ cont, th }) => {
-  console.log(cont);
+  // console.log(cont);
   return (
     <div className={`msgContainer ${th ? "thh" : ""}`}>
       <div className={`mmssgg ${th ? "th" : ""}`}>
