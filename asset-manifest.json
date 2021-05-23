@@ -1,21 +1,23 @@
 {
   "files": {
-    "main.css": "/Chat-App-for-Education/static/css/main.acdec9e8.chunk.css",
-    "main.js": "/Chat-App-for-Education/static/js/main.3bbaf83f.chunk.js",
-    "main.js.map": "/Chat-App-for-Education/static/js/main.3bbaf83f.chunk.js.map",
-    "runtime-main.js": "/Chat-App-for-Education/static/js/runtime-main.6310a4b1.js",
-    "runtime-main.js.map": "/Chat-App-for-Education/static/js/runtime-main.6310a4b1.js.map",
-    "static/js/2.5eaadcdf.chunk.js": "/Chat-App-for-Education/static/js/2.5eaadcdf.chunk.js",
-    "static/js/2.5eaadcdf.chunk.js.map": "/Chat-App-for-Education/static/js/2.5eaadcdf.chunk.js.map",
+    "main.css": "/Chat-App-for-Education/static/css/main.556d18c3.chunk.css",
+    "main.js": "/Chat-App-for-Education/static/js/main.179dcd4c.chunk.js",
+    "main.js.map": "/Chat-App-for-Education/static/js/main.179dcd4c.chunk.js.map",
+    "runtime-main.js": "/Chat-App-for-Education/static/js/runtime-main.e83651f6.js",
+    "runtime-main.js.map": "/Chat-App-for-Education/static/js/runtime-main.e83651f6.js.map",
+    "static/js/2.c7d18252.chunk.js": "/Chat-App-for-Education/static/js/2.c7d18252.chunk.js",
+    "static/js/2.c7d18252.chunk.js.map": "/Chat-App-for-Education/static/js/2.c7d18252.chunk.js.map",
+    "static/js/3.3418a187.chunk.js": "/Chat-App-for-Education/static/js/3.3418a187.chunk.js",
+    "static/js/3.3418a187.chunk.js.map": "/Chat-App-for-Education/static/js/3.3418a187.chunk.js.map",
     "index.html": "/Chat-App-for-Education/index.html",
-    "static/css/main.acdec9e8.chunk.css.map": "/Chat-App-for-Education/static/css/main.acdec9e8.chunk.css.map",
-    "static/js/2.5eaadcdf.chunk.js.LICENSE.txt": "/Chat-App-for-Education/static/js/2.5eaadcdf.chunk.js.LICENSE.txt",
+    "static/css/main.556d18c3.chunk.css.map": "/Chat-App-for-Education/static/css/main.556d18c3.chunk.css.map",
+    "static/js/2.c7d18252.chunk.js.LICENSE.txt": "/Chat-App-for-Education/static/js/2.c7d18252.chunk.js.LICENSE.txt",
     "static/media/Group.95329f49.svg": "/Chat-App-for-Education/static/media/Group.95329f49.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.6310a4b1.js",
-    "static/js/2.5eaadcdf.chunk.js",
-    "static/css/main.acdec9e8.chunk.css",
-    "static/js/main.3bbaf83f.chunk.js"
+    "static/js/runtime-main.e83651f6.js",
+    "static/js/2.c7d18252.chunk.js",
+    "static/css/main.556d18c3.chunk.css",
+    "static/js/main.179dcd4c.chunk.js"
   ]
 }
