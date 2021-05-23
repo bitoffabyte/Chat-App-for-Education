@@ -12,7 +12,7 @@ const Chat = ({ room, setRoom, search }) => {
   const { loggedInUser, loggedInMail } = useUserContext();
   const ref = useRef();
   useEffect(() => {
-    console.log(room.id);
+    // console.log(room.id);
     const uns = db
       .collection("Messages")
       .doc(room.id)
@@ -37,7 +37,7 @@ const Chat = ({ room, setRoom, search }) => {
       email: loggedInMail,
       message: msg,
     };
-    console.log(messagee);
+    // console.log(messagee);
     db.collection("Messages")
       .doc(room.id)
       .update({
@@ -49,6 +49,7 @@ const Chat = ({ room, setRoom, search }) => {
   };
   return (
     <div className="chatArea">
+      <div className="roomName">{room.name}</div>
       <div className="chat">
         {messages.map((i) => {
           if (i.msg.message.includes(search) || i.msg.user.includes(search))
