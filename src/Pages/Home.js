@@ -103,14 +103,14 @@ const Home = () => {
 							)}
 						</div>
 					</div>
-					<div className='mid'>
-						<div className='aassdd'>
+					<div className='mid linksMiddle'>
+						<div className='aassdd sideLinks'>
 							<img src={img} alt='Class' /> Classes
 						</div>
 						<br />
 						<br />
 						<br />
-						<div className='aassdd'>
+						<div className='aassdd sideLinks'>
 							<img src={img} alt='Class' /> Notes
 						</div>
 					</div>
