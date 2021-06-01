@@ -1,0 +1,41 @@
+.chat {
+  /* background-color: rebeccapurple; */
+  background-color: #222222;
+  padding: 0 20px;
+  overflow-y: scroll;
+}
+.roomName {
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  background-color: #5f9ea0;
+}
+.chatSubmitBtn {
+  margin-left: 15px !important;
+  border: 1px solid #222222 !important;
+  color: #222222 !important;
+}
+.chatSubmitBtn:disabled {
+  color: rgba(0, 0, 0, 0.26) !important;
+}
+.chatSubmitBtn:hover {
+  box-shadow: 1px 1px #222222;
+}
+.chat::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat::-webkit-scrollbar-track {
+  /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+  background: linear-gradient(180deg, #f7f0f7 20.71%, #bbd9e9 100%);
+
+  border-radius: 6px;
+}
+
+.chat::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 255, 255, 0.692);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 255, 255, 0.692);
+}

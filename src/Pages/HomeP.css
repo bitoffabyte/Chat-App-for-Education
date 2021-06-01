@@ -1,0 +1,76 @@
+.fl {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.divider {
+  width: 50vw;
+  height: 100%;
+}
+
+.left {
+  display: flex;
+  /* align-items: center; */
+  align-items: flex-start;
+  justify-content: center;
+  flex-flow: column;
+  /* justify-content: flex-start; */
+  /* padding-top: 10%; */
+  padding-left: 5%;
+}
+.logo {
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 130px;
+  /* line-height: 201px; */
+  color: #000000;
+  text-align: center;
+  margin: 0;
+  /* margin-top: 20%; */
+}
+.right {
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.homeImg {
+  /* position: relative; */
+  width: 90%;
+  /* top: 40%;
+	left: 10%; */
+}
+.signinbtn {
+  display: block;
+  width: 30%;
+  margin: 0;
+  /* margin-left: 22%; */
+  margin-top: 10%;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .fl {
+    flex-direction: column;
+    align-items: center;
+  }
+  .divider {
+    width: 100%;
+  }
+  .left {
+    padding-left: 10%;
+  }
+  .right {
+  }
+  .logo {
+    font-size: 100px;
+  }
+  .signinbtn {
+    width: 30%;
+  }
+  /* .homeImg {
+    width: 100%;
+  } */
+}

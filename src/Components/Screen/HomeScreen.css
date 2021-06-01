@@ -1,0 +1,8 @@
+.home_bg {
+	width: 100vw;
+	height: 100vh;
+	background: linear-gradient(180deg, #f7f0f7 20.71%, #bbd9e9 100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

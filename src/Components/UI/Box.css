@@ -1,0 +1,25 @@
+.box {
+	width: 20%;
+	height: 20%;
+	margin: 4%;
+	border-radius: 50px;
+	background: linear-gradient(145deg, #d7ecff, #b5c7dd);
+	box-shadow: 17px 17px 34px #d9d9d9, -17px -17px 34px #ffffff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	overflow-wrap: break-word;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+.box:hover {
+	box-shadow: 10px 10px 20px #8794a4, -10px -10px 20px #ffffff;
+	transition: all 0.5s;
+}
+.box p {
+	width: 80%;
+	display: inline-block;
+	word-break: break-word;
+	text-align: center;
+}

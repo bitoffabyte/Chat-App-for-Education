@@ -1,0 +1,28 @@
+.bbox {
+	width: 80%;
+	height: 80%;
+	background-color: white;
+	border-radius: 50px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.ssearchBar {
+	width: 80%;
+	margin: auto;
+}
+.toopBar {
+	width: 100%;
+	height: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.opt {
+	width: 80%;
+	height: 90%;
+	margin: auto;
+	overflow-y: scroll;
+}

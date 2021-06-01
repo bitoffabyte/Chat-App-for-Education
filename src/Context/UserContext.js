@@ -1,10 +1,11 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { auth, provider } from '../config';
 const AddContext = createContext();
-export const useLocalContext = () => {
+export const useUserContext = () => {
 	return useContext(AddContext);
 };
-export const ContextProvider = ({ children }) => {
+
+export const UserContext = ({ children }) => {
 	const [loggedInUser, setLoggedInUser] = useState(null);
 	const [loggedInMail, setLoggedInMail] = useState(null);
 	const login = () => auth.signInWithPopup(provider);

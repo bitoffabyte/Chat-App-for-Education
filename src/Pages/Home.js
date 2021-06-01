@@ -1,129 +1,161 @@
 import React, { useEffect, useState } from 'react';
-import Side from '../Components/Side';
-import { useLocalContext } from '../Context/Context';
-import './home.css';
-import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router';
+import Sidebar from '../Components/UI/Sidebar';
 import db from '../config';
-import Com from '../Components/Com';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Dialog from '@material-ui/core/Dialog';
-import { TextField } from '@material-ui/core';
-import AddIcon from '@material-ui/icons/Add';
-import IconButton from '@material-ui/core/IconButton';
+import { useUserContext } from '../Context/UserContext';
+import './Home.css';
+import img from '../assets/cl.png';
+import imgg from '../assets/sout.png';
+import Card from '../Components/UI/Card';
+import { Button, Modal } from '@material-ui/core';
 import { v4 as uuidv4 } from 'uuid';
 import firebase from 'firebase';
-import 'firebase/firestore';
+import Box from '../Components/UI/Box';
 
 const Home = () => {
 	const history = useHistory();
-	const { logout, loggedInUser, loggedInMail } = useLocalContext();
-	const [data, setData] = useState({});
-	const [isTeacher, setIsTeacher] = useState('');
-	const [pop, setPop] = useState('');
-	const [open, setOpen] = useState(false);
+	const { loggedInUser, loggedInMail, logout } = useUserContext();
+	const [mail, setMail] = useState('');
+	const [user, setUser] = useState({});
+	const [isTeacher, setIsTeacher] = useState(false);
+	const [openModal, setOpenModal] = useState(false);
+	const [classes, setClasses] = useState([]);
 	useEffect(() => {
-		console.log(!loggedInUser);
 		if (!loggedInUser) {
 			history.push('/');
+			return;
 		}
-	}, [loggedInUser]);
-	useEffect(() => {
-		if (loggedInMail)
-			db.collection('Users')
-				.doc(loggedInMail)
-				.onSnapshot((snap) => {
-					if (snap.exists) {
-						setData(snap.data());
-						setIsTeacher(snap.data().isTeacher);
-					}
-				});
-	}, [loggedInMail]);
-
-	const joinClass = () => {
-		let name = '';
-		db.collection('Classes')
-			.doc(pop)
+		setMail(loggedInMail);
+		const unsubscribe = db
+			.collection('Users')
+			.doc(loggedInMail)
 			.get()
-			.then((docSnapshot) => {
-				if (docSnapshot.exists) {
-					db.collection('Classes')
-						.doc(pop)
-						.onSnapshot((doc) => {
-							name = doc.data().name;
-							db.collection('Users')
-								.doc(loggedInMail)
-								.update({
-									classes: firebase.firestore.FieldValue.arrayUnion(
-										{
-											id: pop,
-											name: name,
-										}
-									),
-								});
-						});
-				} else {
-					alert('Invalid id');
-				}
+			.then((snap) => {
+				setUser(snap.data());
+				setIsTeacher(user.isTeacher);
+				setClasses(user.classes);
 			});
-		db.collection('Classes')
-			.doc(pop)
-			.update({
-				members: firebase.firestore.FieldValue.arrayUnion(loggedInMail),
-			});
-	};
-	const newClass = () => {
+		return unsubscribe;
+	}, [loggedInUser, user]);
+
+	const addClass = (name) => {
 		const id = uuidv4();
-		const data = { id, members: [loggedInMail], name: pop };
-		db.collection('Classes').doc(id).set(data);
+		const id1 = uuidv4();
+		const id2 = uuidv4();
+		const id3 = uuidv4();
+		const id4 = uuidv4();
+		const classData = {
+			id,
+			name,
+			members: [loggedInMail],
+			rooms: [
+				{
+					name: 'General',
+					id: id1,
+				},
+				{
+					name: 'Doubts',
+					id: id2,
+				},
+				{
+					name: 'Submissions',
+					id: id3,
+				},
+				{
+					name: 'Doubts',
+					id: id4,
+				},
+			],
+		};
+		db.collection('Classes').doc(id).set(classData);
 		db.collection('Users')
 			.doc(loggedInMail)
 			.update({
 				classes: firebase.firestore.FieldValue.arrayUnion({
 					id,
-					name: pop,
+					name,
 				}),
 			});
+		db.collection('Messages').doc(id1).set({ messages: [] });
+		db.collection('Messages').doc(id2).set({ messages: [] });
+		db.collection('Messages').doc(id3).set({ messages: [] });
+		db.collection('Messages').doc(id4).set({ messages: [] });
+
+		setOpenModal(false);
 	};
 	return (
 		<div className='home'>
-			<Side
-				isTeacher={isTeacher}
-				loggedInUser={loggedInUser}
-				logout={() => {
-					logout();
-					history.push('/');
-				}}
-			/>
-			<Com
-				classe={data.classes}
-				isTeacher={isTeacher}
-				setOpen={setOpen}
-			/>
-			<Dialog
-				open={open}
-				onClose={() => setOpen(false)}
-				maxWidth='md'
-				fullWidth={true}
-			>
-				<div className='dia'>
-					<DialogTitle id='simple-dialog-title'>
-						{isTeacher ? 'Create Class' : 'Join Class'}
-					</DialogTitle>
-					<TextField
-						id='standard-basic'
-						label={isTeacher ? 'Class Name' : 'Class Id'}
-						vlue={pop}
-						onChange={(e) => setPop(e.target.value)}
-					/>
-					<IconButton
-						onClick={() => {
-							isTeacher ? newClass() : joinClass();
-						}}
-					>
-						<AddIcon className='plus' />
-					</IconButton>
+			<Modal
+				open={openModal}
+				onClose={() => setOpenModal(false)}
+				aria-labelledby='simple-modal-title'
+				aria-describedby='simple-modal-description'>
+				<Card addClass={addClass}></Card>
+			</Modal>
+			<Sidebar>
+				<div className='sb'>
+					<div className='div1 userDiv'>
+						<img src={user.image} alt='User' />
+						<div>
+							<p className='nameroll'>{user.name}</p>
+							{isTeacher ? null : (
+								<p className='namerolll'>{user.regNo}</p>
+							)}
+						</div>
+					</div>
+					<div className='mid linksMiddle'>
+						<div className='aassdd sideLinks'>
+							<img src={img} alt='Class' /> Classes
+						</div>
+						<br />
+						<br />
+						<br />
+						<div className='aassdd sideLinks'>
+							<img src={img} alt='Class' /> Notes
+						</div>
+					</div>
+					<div style={{ textAlign: 'left', alignItems: 'left' }}>
+						<img
+							src={imgg}
+							style={{ cursor: 'pointer' }}
+							alt='Log out'
+							onClick={logout}
+						/>
+					</div>
 				</div>
-			</Dialog>
+			</Sidebar>
+			<div className='por'>
+				<div className='topbar'>
+					<p className='jj'>My Classes</p>
+					{isTeacher ? (
+						<div className='lll'>
+							<Button
+								className='jc'
+								color='secondary'
+								onClick={() => setOpenModal(true)}>
+								Create a class
+							</Button>
+						</div>
+					) : null}
+				</div>
+				<div className='mainpor'>
+					<div className='main'>
+						{classes
+							? classes.map((i) => {
+									return (
+										<Box
+											key={i.id}
+											onClick={() => {
+												history.push('/class/' + i.id);
+											}}>
+											{i.name}
+										</Box>
+									);
+							  })
+							: null}
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 };
