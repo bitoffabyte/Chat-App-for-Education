@@ -10,7 +10,7 @@ const HomeP = () => {
     <HomeScreen>
       <div className="fl">
         <div className="divider left">
-          <p className="logo">Intract</p>
+          <p className="logo">Interact</p>
           <img
             src={img2}
             className="signinbtn"
