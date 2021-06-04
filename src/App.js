@@ -5,7 +5,7 @@ import { useUserContext } from './Context/UserContext';
 import Reg from './RouteHandler/Reg';
 import Home from './Pages/Home';
 import Class from './Pages/Class';
-
+import Notes from './Pages/Notes';
 function App() {
 	const { loggedInUser, logout } = useUserContext();
 	// logout();
@@ -21,6 +21,9 @@ function App() {
 				<Route
 					path='/class/:id'
 					render={({ match }) => <Class match={match} />}></Route>
+				<Route
+					path='/notes'
+					render={({ match }) => <Notes match={match} />}></Route>
 			</Switch>
 		</Router>
 	);

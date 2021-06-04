@@ -110,7 +110,11 @@ const Home = () => {
 						<br />
 						<br />
 						<br />
-						<div className='aassdd sideLinks'>
+						<div
+							className='aassdd sideLinks'
+							onClick={() => {
+								history.push('/notes');
+							}}>
 							<img src={img} alt='Class' /> Notes
 						</div>
 					</div>
