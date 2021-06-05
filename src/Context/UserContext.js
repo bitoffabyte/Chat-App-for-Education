@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useRef, useState } from 'react';
 import { auth, provider } from '../config';
 const AddContext = createContext();
 export const useUserContext = () => {
@@ -10,6 +10,7 @@ export const UserContext = ({ children }) => {
 	const [loggedInMail, setLoggedInMail] = useState(null);
 	const login = () => auth.signInWithPopup(provider);
 	const logout = () => auth.signOut();
+	const socketRef = useRef();
 	useEffect(() => {
 		const unsubscribe = auth.onAuthStateChanged((authUser) => {
 			if (authUser) {
@@ -27,6 +28,7 @@ export const UserContext = ({ children }) => {
 		logout,
 		loggedInMail,
 		loggedInUser,
+		socketRef,
 	};
 	return <AddContext.Provider value={value}>{children}</AddContext.Provider>;
 };

@@ -62,7 +62,7 @@ const Home = () => {
 					id: id3,
 				},
 				{
-					name: 'Doubts',
+					name: 'Call',
 					id: id4,
 				},
 			],

@@ -6,8 +6,12 @@ import Reg from './RouteHandler/Reg';
 import Home from './Pages/Home';
 import Class from './Pages/Class';
 import Notes from './Pages/Notes';
+import io from 'socket.io-client';
+
 function App() {
-	const { loggedInUser, logout } = useUserContext();
+	const { loggedInUser, logout, socketRef } = useUserContext();
+	socketRef.current = io.connect('localhost:8000/');
+
 	// logout();
 	return (
 		<Router>
